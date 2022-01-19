@@ -1,0 +1,13 @@
+variable "lb_name" {}
+variable "lb_facing" {}
+variable "lb_type" {}
+variable "lb_public_subnet" {}
+variable "lb_public_sg" {}
+variable "lb_vpc" {}
+variable "lb_port" {}
+variable "lb_protocol" {}
+variable "lb_port_ssl" {}
+variable "lb_cert_arn" {}
+variable "lb_ssl_policy" {}
+variable "lb_protocol_ssl" {}
+variable "lb_tg_arn" {}
