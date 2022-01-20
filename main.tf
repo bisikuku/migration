@@ -4,7 +4,6 @@ terraform {
   backend "s3" {
   bucket = "tdoc2-prod-terraform-state" 
   key = "terraform.tfstate" 
-  shared_credentials_file = "/root/.aws/profile"
   region = "us-west-2" 
   profile = "profile" 
   } 
