@@ -17,6 +17,5 @@ provider "aws" {
   region                  = "us-west-2"
   access_key = var.key_tela
   secret_key = var.secret_tela
-  profile                 = "myprofile"
 }
  
