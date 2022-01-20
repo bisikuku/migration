@@ -15,6 +15,8 @@ variable "secret_tdh" {}
 
 variable "key_tela" {}
 variable "secret_tela" {}
+variable "AWS_ACCESS_KEY_ID" {}
+variable "AWS_SECRET_ACCESS_KEY" {}
 
 
 
