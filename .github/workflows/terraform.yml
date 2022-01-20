@@ -75,6 +75,11 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform init
+      env:
+        AWS_ACCESS_KEY_ID_TDH: ${{ secrets.AWS_ACCESS_KEY_ID_TDH }} --profile profile
+        AWS_SECRET_ACCESS_KEY_TDH: ${{ secrets.AWS_SECRET_ACCESS_KEY_TDH }} --profile profile
+        AWS_ACCESS_KEY_ID_TELADOC: ${{ secrets.AWS_ACCESS_KEY_ID_TELADOC}} --profile MyProfile
+        AWS_SECRET_ACCESS_KEY_TELADOC: ${{ secrets.AWS_SECRET_ACCESS_KEY_TELADOC }} --profile MyProfile
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
