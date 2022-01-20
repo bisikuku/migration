@@ -15,8 +15,8 @@ terraform {
 # Declaring an AWS provider named aws
 provider "aws" {
   region                  = var.aws_region
-  access_key = var.key_tdh
-  secret_key = var.secret_tdh
-  profile                 = "profile"
+  # access_key = var.key_tdh
+  # secret_key = var.secret_tdh
+  # profile                 = "profile"
 }
   
