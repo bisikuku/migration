@@ -44,7 +44,7 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      run: terraform plan
+      run: terraform plan -lock=false
       env:
         TF_VAR_key_tela: ${{ secrets.AWS_ACCESS_KEY_ID_TE }}
         TF_VAR_secret_tela: ${{ secrets.AWS_SECRET_ACCESS_KEY_TE }}
