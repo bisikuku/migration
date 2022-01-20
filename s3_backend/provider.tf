@@ -15,6 +15,6 @@ terraform {
 # Declaring an AWS provider named aws
 provider "aws" {
   region                  = "us-west-2"
-  profile                 = "profile"
+  #profile                 = "profile"
 }
   
