@@ -74,10 +74,10 @@ jobs:
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
-      run: terraform init -backend-config=./s3_backend/backend.txt
+      run: terraform init -backend-config=../s3_backend/backend.txt
       env:
-        TF_VAR_key_tdh: ${{ secrets.AWS_ACCESS_KEY_ID_TDH }}
-        TF_VAR_secret_tdh: ${{ secrets.AWS_SECRET_ACCESS_KEY_TDH }}
+        AWS_ACCESS_KEY_ID_TDH: ${{ secrets.AWS_ACCESS_KEY_ID_TDH }} 
+        AWS_SECRET_ACCESS_KEY_TDH: ${{ secrets.AWS_SECRET_ACCESS_KEY_TDH }} 
         
 
     # Checks that all Terraform configuration files adhere to a canonical format
