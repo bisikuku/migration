@@ -10,6 +10,11 @@ variable "dbuser" {}
 variable "account_id" {}
 variable "ami_name" {}
 variable "source_instance_id" {}
+variable "key_tdh" {}
+variable "secret_tdh" {}
+
+variable "key_tela" {}
+variable "secret_tela" {}
 
 
 

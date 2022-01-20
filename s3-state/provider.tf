@@ -15,7 +15,8 @@ terraform {
 # Declaring an AWS provider named aws
 provider "aws" {
   region                  = "us-west-2"
-  shared_credentials_file = "/root/.aws/profile"
+  access_key = var.key_tdh
+  secret_key = var.secret_tdh
   profile                 = "profile"
 }
   

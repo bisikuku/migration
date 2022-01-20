@@ -95,3 +95,5 @@ variable "enable_key_rotation" {
   description = "Specifies whether key rotation is enabled."
 }
 
+variable "key_tdh" {}
+variable "secret_tdh" {}

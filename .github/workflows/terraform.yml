@@ -76,10 +76,9 @@ jobs:
     - name: Terraform Init
       run: terraform init -backend-config=../s3_backend/backend.txt
       env:
-        AWS_ACCESS_KEY_ID_TDH: ${{ secrets.AWS_ACCESS_KEY_ID_TDH }} --profile profile
-        AWS_SECRET_ACCESS_KEY_TDH: ${{ secrets.AWS_SECRET_ACCESS_KEY_TDH }} --profile profile
-        AWS_ACCESS_KEY_ID_TELADOC: ${{ secrets.AWS_ACCESS_KEY_ID_TELADOC}} --profile MyProfile
-        AWS_SECRET_ACCESS_KEY_TELADOC: ${{ secrets.AWS_SECRET_ACCESS_KEY_TELADOC }} --profile MyProfile
+        TF_VAR_key_tdh: ${{ secrets.AWS_ACCESS_KEY_ID_TDH }}
+        TF_VAR_secret_tdh: ${{ secrets.AWS_SECRET_ACCESS_KEY_TDH }}
+        
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
