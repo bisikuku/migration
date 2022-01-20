@@ -4,8 +4,8 @@ terraform {
   backend "s3" {
   bucket = "tdoc2-prod-terraform-state" 
   key = "terraform.tfstate"
-  access_key = var.AWS_ACCESS_KEY_ID
-  secret_key = var.AWS_SECRET_ACCESS_KEY 
+  access_key = var.key_tdh
+  secret_key = var.secret_thd
   region = "us-west-2" 
   profile = "profile" 
   } 
