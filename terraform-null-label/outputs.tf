@@ -82,10 +82,10 @@ output "tags_as_list_of_maps" {
     EOT
 }
 
-output "descriptors" {
-  value       = local.descriptors
-  description = "Map of descriptors as configured by `descriptor_formats`"
-}
+# output "descriptors" {
+#   value       = local.descriptors
+#   description = "Map of descriptors as configured by `descriptor_formats`"
+# }
 
 output "normalized_context" {
   value       = local.output_context
