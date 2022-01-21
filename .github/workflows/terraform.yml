@@ -25,8 +25,7 @@ jobs:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v2
-    - name: terraform lock
-      run: terraform force-unlock  68131182-6471-3b0b-d70e-ce212f888926
+  
       # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
