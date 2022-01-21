@@ -44,8 +44,8 @@ jobs:
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
       run: terraform fmt
-    - name: terraform lock
-      run: terraform force-unlock -force  a3e4fc72-0615-c47c-5163-45ec5788024f 
+    #- name: terraform lock
+    #  run: terraform force-unlock -force  a3e4fc72-0615-c47c-5163-45ec5788024f 
       # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan
