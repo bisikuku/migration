@@ -62,7 +62,7 @@ module "ami" {
   aws_region         = "us-west-2"
   source_instance_id = var.source_instance_id
   ami_name           = var.ami_name
-  secret_tela.       = var.secret_tela
+  secret_tela       = var.secret_tela
   key_tela  = var.key_tela
   account_id = var.account_id
 
