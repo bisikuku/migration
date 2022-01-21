@@ -13,8 +13,8 @@ variable "source_instance_id" {}
 # variable "key_tdh" {}
 # variable "secret_tdh" {}
 
-# variable "key_tela" {}
-# variable "secret_tela" {}
+variable "key_tela" {}
+variable "secret_tela" {}
 
 
 
