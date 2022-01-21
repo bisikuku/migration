@@ -23,19 +23,19 @@ module "networking" {
   db_subnet_group  = true
 }
 
-module "database" {
-  source                 = "./database"
-  db_storage             = 10
-  db_instance_class      = "db.t2.micro"
-  db_engine_version      = "5.7.22"
-  dbuser                 = var.dbuser
-  dbpass                 = var.dbpass
-  db_skip_final_snapshot = true
-  db_identifier          = "nfs-db"
-  vpc_security_group_ids = module.networking.db_security_group
-  db_subnet_group_name   = module.networking.db_subnet_group[0]
+# module "database" {
+#   source                 = "./database"
+#   db_storage             = 10
+#   db_instance_class      = "db.t2.micro"
+#   db_engine_version      = "5.7.22"
+#   dbuser                 = var.dbuser
+#   dbpass                 = var.dbpass
+#   db_skip_final_snapshot = true
+#   db_identifier          = "nfs-db"
+#   vpc_security_group_ids = module.networking.db_security_group
+#   db_subnet_group_name   = module.networking.db_subnet_group[0]
 
-}
+# }
 
 module "loadbalancer" {
   source           = "./loadbalancer"
