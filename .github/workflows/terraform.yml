@@ -45,8 +45,8 @@ jobs:
     - name: Terraform Format
       run: terraform fmt
     - name: terraform lock
-      run: terraform force-unlock  68131182-6471-3b0b-d70e-ce212f888926
-    # Generates an execution plan for Terraform
+      run: terraform force-unlock  68131182-6471-3b0b-d70e-ce212f888926 -auto-approve
+      # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan
       env:
