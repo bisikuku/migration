@@ -10,13 +10,11 @@ variable "dbuser" {}
 variable "account_id" {}
 variable "ami_name" {}
 variable "source_instance_id" {}
-variable "key_tdh" {}
-variable "secret_tdh" {}
+# variable "key_tdh" {}
+# variable "secret_tdh" {}
 
 variable "key_tela" {}
 variable "secret_tela" {}
-variable "AWS_ACCESS_KEY_ID" {}
-variable "AWS_SECRET_ACCESS_KEY" {}
 
 
 
