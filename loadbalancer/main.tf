@@ -19,7 +19,7 @@ resource "aws_lb" "tela_lb" {
 }
 
 resource "aws_lb_target_group" "tela_lb_target_group" {
-  name     = "tela-lb-tg"
+  name     = "tela-tg"
   port     = var.lb_port
   protocol = var.lb_protocol
   vpc_id   = var.lb_vpc
