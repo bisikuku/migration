@@ -1,14 +1,13 @@
 # ----root/main.tf -----
 
-terraform {
-  backend "s3" {
-  bucket = "tdoc2-prod-terraform-state" 
-  key = "terraform.tfstate"
-  region = "us-west-2" 
-  #profile = "profile" 
-  } 
-}
-
+# terraform {
+#   backend "s3" {
+#   bucket = "tdoc2-prod-terraform-state" 
+#   key = "terraform.tfstate"
+#   region = "us-west-1" 
+#   profile = "default" 
+#   } 
+# }
 
 module "networking" {
   source           = "./networking"
@@ -18,9 +17,9 @@ module "networking" {
   public_sn_count  = 2
   private_sn_count = 5
   max_subnets      = 20
-  public_cidr      = [for i in range(2, 225, 2) : cidrsubnet(local.vpc_cidr, 8, i)]
+  public_cidr      = [for i in range(2, 255, 2) : cidrsubnet(local.vpc_cidr, 8, i)]
   private_cidr     = [for i in range(1, 255, 2) : cidrsubnet(local.vpc_cidr, 8, i)]
-  db_subnet_group  = true
+  db_subnet_group  = false
 }
 
 # module "database" {
@@ -42,7 +41,7 @@ module "loadbalancer" {
   lb_public_sg     = module.networking.public_sg
   lb_public_subnet = module.networking.public_subnet[0]
   #lb_private_subnet = module.networking.private_subnet
-  lb_name         = "nfs-lb"
+  lb_name         = "tela-lb"
   lb_type         = "application"
   lb_facing       = false
   lb_protocol     = "HTTP"
@@ -52,27 +51,25 @@ module "loadbalancer" {
   lb_ssl_policy   = "ELBSecurityPolicy-2016-08"
   lb_vpc          = module.networking.vpc_id
   lb_tg_arn       = module.loadbalancer.tg_arn
-  lb_cert_arn     = module.certificate.lb_cert_arn
-
-
+  lb_cert_arn     = module.certificate.cert_arn
 }
 
 module "ami" {
   source             = "./ami"
-  aws_region         = "us-west-2"
   source_instance_id = var.source_instance_id
   ami_name           = var.ami_name
-  secret_tela       = var.secret_tela
-  key_tela  = var.key_tela
   account_id = var.account_id
-
+  destination = var.destination
+  copyname = var.copyname
+  profile = var.profile
+  aws_region = var.aws_region
+  name = var.name
+  aws_source_region = var.aws_source_region
 }
-
-
 
 module "certificate" {
   source            = "./certificate"
-  domain_name       = "netfort.cloud"
+  domain_name       = "brickscourt.com"
   validation_method = "DNS"
   Environment       = "production"
   cert_ttl          = 60

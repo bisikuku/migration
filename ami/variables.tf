@@ -2,5 +2,8 @@ variable "account_id" {}
 variable "ami_name" {}
 variable "source_instance_id" {}
 variable "aws_region" {}
-variable "key_tela" {}
-variable "secret_tela" {}
+variable "destination" {}
+variable "copyname" {}
+variable "profile" {}
+variable "name" {}
+variable "aws_source_region" {}
